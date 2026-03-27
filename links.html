@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origen Core — Links</title>
+    <meta name="description" content="Conectá con Origen Core. Encontrá todos nuestros canales de contacto en un solo lugar.">
+    
+    <!-- Fonts: Libre Baskerville (display) + Lora (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://origencore.com/links">
+    <meta property="og:title" content="Origen Core — Links">
+    <meta property="og:description" content="Conectá con Origen Core. Encontrá todos nuestros canales de contacto en un solo lugar.">
+    <meta property="og:image" content="https://origencore.com/og-banner.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo-icon.png">
+    <link rel="apple-touch-icon" href="logo-icon.png">
+    
+    <style>
+        /* ==========================================================================
+           ORIGEN CORE — Linktree Page Styles
+           ========================================================================== */
+        
+        :root {
+            /* Primary Palette */
+            --azul-medianoche: #0F172A;
+            --azul-medianoche-light: #1E293B;
+            --azul-medianoche-lighter: #334155;
+            --blanco-hielo: #F8FAFC;
+            --blanco-hielo-muted: rgba(248, 250, 252, 0.85);
+            --gris-mercurio: #E2E8F0;
+            --gris-mercurio-light: #F1F5F9;
+            --gris-mercurio-dark: #94A3B8;
+            --esmeralda: #10B981;
+            --esmeralda-hover: #34D399;
+            --esmeralda-subtle: rgba(16, 185, 129, 0.1);
+            
+            /* WhatsApp Green */
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #128C7E;
+            
+            /* Instagram Gradient */
+            --instagram-pink: #E1306C;
+            --instagram-purple: #833AB4;
+            --instagram-orange: #F77737;
+            
+            /* Typography */
+            --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+            --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+            
+            /* Transitions */
+            --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--azul-medianoche);
+            color: var(--blanco-hielo);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+        }
+        
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 50% at 0% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(16, 185, 129, 0.04) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Floating Orbs Animation */
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(16, 185, 129, 0.15);
+            top: -100px;
+            right: -100px;
+            animation: floatOrb1 15s ease-in-out infinite;
+        }
+        
+        .orb-2 {
+            width: 200px;
+            height: 200px;
+            background: rgba(52, 211, 153, 0.12);
+            bottom: 10%;
+            left: -50px;
+            animation: floatOrb2 18s ease-in-out infinite;
+        }
+        
+        .orb-3 {
+            width: 150px;
+            height: 150px;
+            background: rgba(16, 185, 129, 0.1);
+            top: 50%;
+            right: -30px;
+            animation: floatOrb3 12s ease-in-out infinite;
+        }
+        
+        @keyframes floatOrb1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-30px, 50px) scale(1.1); }
+            66% { transform: translate(20px, 30px) scale(0.95); }
+        }
+        
+        @keyframes floatOrb2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(40px, -30px) scale(1.05); }
+            66% { transform: translate(20px, 20px) scale(0.9); }
+        }
+        
+        @keyframes floatOrb3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, 40px) scale(1.15); }
+        }
+        
+        /* Main Container */
+        .linktree-container {
+            width: 100%;
+            max-width: 440px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Profile Section */
+        .profile {
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .profile-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.25rem;
+            position: relative;
+        }
+        
+        .profile-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 0.5rem;
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 
+                0 0 30px rgba(16, 185, 129, 0.2),
+                inset 0 0 20px rgba(16, 185, 129, 0.1);
+        }
+        
+        /* Rotating ring around logo */
+        .profile-logo::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                transparent,
+                rgba(16, 185, 129, 0.4),
+                transparent,
+                rgba(52, 211, 153, 0.3),
+                transparent
+            );
+            animation: rotateRing 8s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotateRing {
+            to { transform: rotate(360deg); }
+        }
+        
+        .profile-name {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--blanco-hielo) 0%, var(--gris-mercurio) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .profile-tagline {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--gris-mercurio-dark);
+            line-height: 1.5;
+        }
+        
+        /* Links Container */
+        .links-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        /* Link Card Base */
+        .link-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            color: var(--blanco-hielo);
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(148, 163, 184, 0.12);
+            border-radius: 14px;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            transition: all var(--transition-smooth);
+            opacity: 0;
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .link-card:nth-child(1) { animation-delay: 0.1s; }
+        .link-card:nth-child(2) { animation-delay: 0.2s; }
+        .link-card:nth-child(3) { animation-delay: 0.3s; }
+        .link-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        /* Glass effect layer */
+        .link-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.08) 0%, 
+                rgba(255, 255, 255, 0.02) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: -2;
+            transition: all var(--transition-smooth);
+        }
+        
+        /* Shine sweep effect */
+        .link-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.05) 40%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0.05) 60%,
+                transparent 100%
+            );
+            transform: skewX(-20deg);
+            transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: -1;
+        }
+        
+        .link-card:hover::after {
+            left: 150%;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-3px) scale(1.02);
+            border-color: rgba(148, 163, 184, 0.25);
+            box-shadow: 
+                0 20px 40px -15px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(16, 185, 129, 0.1);
+        }
+        
+        .link-card:active {
+            transform: translateY(-1px) scale(0.99);
+            transition: transform 0.1s ease;
+        }
+        
+        /* Icon Container */
+        .link-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            flex-shrink: 0;
+            transition: all var(--transition-smooth);
+        }
+        
+        .link-icon svg {
+            width: 24px;
+            height: 24px;
+            transition: transform var(--transition-smooth);
+        }
+        
+        .link-card:hover .link-icon svg {
+            transform: scale(1.1);
+        }
+        
+        /* Link Content */
+        .link-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .link-title {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+            transition: color var(--transition-smooth);
+        }
+        
+        .link-subtitle {
+            font-size: 0.8rem;
+            color: var(--gris-mercurio-dark);
+            transition: color var(--transition-smooth);
+        }
+        
+        /* Arrow */
+        .link-arrow {
+            width: 20px;
+            height: 20px;
+            color: var(--gris-mercurio-dark);
+            transition: all var(--transition-smooth);
+            flex-shrink: 0;
+        }
+        
+        .link-card:hover .link-arrow {
+            color: var(--blanco-hielo);
+            transform: translateX(4px);
+        }
+        
+        /* ========== SPECIFIC LINK STYLES ========== */
+        
+        /* Website Link - Esmeralda */
+        .link-website .link-icon {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .link-website .link-icon svg {
+            color: var(--esmeralda);
+        }
+        
+        .link-website:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 
+                0 20px 40px -15px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(16, 185, 129, 0.2);
+        }
+        
+        .link-website:hover .link-icon {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(16, 185, 129, 0.15) 100%);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .link-website:hover .link-title {
+            color: var(--esmeralda-hover);
+        }
+        
+        /* WhatsApp Links */
+        .link-whatsapp .link-icon {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.2) 0%, rgba(18, 140, 126, 0.15) 100%);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+        }
+        
+        .link-whatsapp .link-icon svg {
+            color: var(--whatsapp-green);
+        }
+        
+        .link-whatsapp:hover {
+            border-color: rgba(37, 211, 102, 0.4);
+            box-shadow: 
+                0 20px 40px -15px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(37, 211, 102, 0.2);
+        }
+        
+        .link-whatsapp:hover .link-icon {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.3) 0%, rgba(18, 140, 126, 0.2) 100%);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .link-whatsapp:hover .link-title {
+            color: var(--whatsapp-green);
+        }
+        
+        /* Instagram Link */
+        .link-instagram .link-icon {
+            background: linear-gradient(135deg, 
+                rgba(131, 58, 180, 0.2) 0%, 
+                rgba(225, 48, 108, 0.15) 50%,
+                rgba(247, 119, 55, 0.1) 100%);
+            border: 1px solid rgba(225, 48, 108, 0.3);
+        }
+        
+        .link-instagram .link-icon svg {
+            background: linear-gradient(45deg, var(--instagram-purple), var(--instagram-pink), var(--instagram-orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: var(--instagram-pink);
+        }
+        
+        .link-instagram:hover {
+            border-color: rgba(225, 48, 108, 0.4);
+            box-shadow: 
+                0 20px 40px -15px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(225, 48, 108, 0.2);
+        }
+        
+        .link-instagram:hover .link-icon {
+            background: linear-gradient(135deg, 
+                rgba(131, 58, 180, 0.3) 0%, 
+                rgba(225, 48, 108, 0.2) 50%,
+                rgba(247, 119, 55, 0.15) 100%);
+            box-shadow: 0 0 20px rgba(225, 48, 108, 0.3);
+        }
+        
+        .link-instagram:hover .link-title {
+            background: linear-gradient(45deg, var(--instagram-purple), var(--instagram-pink), var(--instagram-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Footer */
+        .linktree-footer {
+            margin-top: 2rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease-out 0.5s forwards;
+        }
+        
+        .footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--gris-mercurio-dark);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid transparent;
+            transition: all var(--transition-smooth);
+        }
+        
+        .footer-link:hover {
+            color: var(--blanco-hielo);
+            border-color: rgba(148, 163, 184, 0.2);
+            background: rgba(30, 41, 59, 0.5);
+        }
+        
+        .footer-link svg {
+            width: 14px;
+            height: 14px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .link-card, .profile, .linktree-footer {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        
+        /* Focus states */
+        .link-card:focus-visible,
+        .footer-link:focus-visible {
+            outline: 2px solid var(--esmeralda);
+            outline-offset: 3px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            
+            .profile-logo {
+                width: 85px;
+                height: 85px;
+            }
+            
+            .profile-name {
+                font-size: 1.5rem;
+            }
+            
+            .link-card {
+                padding: 0.9rem 1rem;
+                gap: 0.85rem;
+            }
+            
+            .link-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .link-icon svg {
+                width: 22px;
+                height: 22px;
+            }
+            
+            .link-title {
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Selection */
+        ::selection {
+            background: var(--esmeralda);
+            color: var(--azul-medianoche);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Orbs -->
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+    <div class="bg-orb orb-3" aria-hidden="true"></div>
+    
+    <main class="linktree-container" role="main">
+        <!-- Profile Section -->
+        <header class="profile">
+            <div class="profile-logo">
+                <img src="logo-icon.png" alt="Origen Core Logo">
+            </div>
+            <h1 class="profile-name">Origen Core</h1>
+            <p class="profile-tagline">El núcleo estratégico de tu marca</p>
+        </header>
+        
+        <!-- Links -->
+        <nav class="links-list" aria-label="Enlaces de contacto">
+            <!-- Website -->
+            <a href="https://origencore.com" class="link-card link-website" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <span class="link-title">Sitio Web</span>
+                    <span class="link-subtitle">origencore.com</span>
+                </div>
+                <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            
+            <!-- Instagram -->
+            <a href="https://instagram.com/origencore" class="link-card link-instagram" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <span class="link-title">Instagram</span>
+                    <span class="link-subtitle">@origencore</span>
+                </div>
+                <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            
+            <!-- WhatsApp Rodrigo -->
+            <a href="https://wa.me/542616188566" class="link-card link-whatsapp" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <span class="link-title">WhatsApp Rodrigo</span>
+                    <span class="link-subtitle">+54 261 6 188 566</span>
+                </div>
+                <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            
+            <!-- WhatsApp Camila -->
+            <a href="https://wa.me/542494211477" class="link-card link-whatsapp" target="_blank" rel="noopener noreferrer">
+                <div class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <span class="link-title">WhatsApp Camila</span>
+                    <span class="link-subtitle">+54 249 4 211 477</span>
+                </div>
+                <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </nav>
+        
+        <!-- Footer -->
+        <footer class="linktree-footer">
+            <a href="https://origencore.com" class="footer-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v10"/>
+                    <path d="M21 12h-6m-6 0H1"/>
+                    <path d="m18.364 5.636-4.243 4.243m-4.242 4.242-4.243 4.243"/>
+                    <path d="m5.636 5.636 4.243 4.243m4.242 4.242 4.243 4.243"/>
+                </svg>
+                © 2026 Origen Core
+            </a>
+        </footer>
+    </main>
+    
+    <script>
+        // Add subtle parallax effect to orbs on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const orbs = document.querySelectorAll('.bg-orb');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            orbs.forEach((orb, index) => {
+                const speed = (index + 1) * 15;
+                const moveX = (x - 0.5) * speed;
+                const moveY = (y - 0.5) * speed;
+                orb.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+        
+        // Add ripple effect on link click
+        document.querySelectorAll('.link-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.15);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out forwards;
+                    pointer-events: none;
+                    z-index: 0;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+        
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2.5);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

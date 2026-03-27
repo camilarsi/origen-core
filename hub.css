@@ -1,0 +1,563 @@
+/* ═══════════════════════════════════════════════════════════
+   hub.css — Origen Core · Selector de camino
+   Dos mundos, una marca.
+═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* ─── Tokens · Paleta Petróleo + Ámbar ──────────────────── */
+:root {
+    /* Base profunda — petróleo oscuro */
+    --anchor:    #0C2830;
+    --d-bg:      #0C2830;
+    --d-mid:     #10313A;
+    --d-deep:    #082028;
+
+    /* Texto sobre oscuro */
+    --d-text:    #EDE9E3;
+    --d-muted:   rgba(237, 233, 227, 0.55);
+
+    /* Acento — ámbar cálido */
+    --d-accent:  #C4976A;
+    --d-accent2: #D4A87A;
+    --d-border:  rgba(196, 151, 106, 0.14);
+
+    /* Tonos claros — blanco neutro-cálido */
+    --l-entry:   #E8E2D8;
+    --l-bg:      #F4EFE6;
+    --l-bright:  #FDFAF5;
+    --l-text:    #1A1714;
+    --l-muted:   #5A5248;
+    --l-accent:  #0C2830;
+    --l-border:  rgba(12, 40, 48, 0.1);
+
+    --display: 'Libre Baskerville', Georgia, serif;
+    --body:    'Lora', Georgia, serif;
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-std: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    font-size: 20px;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--body);
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--l-bg);
+}
+
+a   { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+ul  { list-style: none; }
+
+/* ─── Wrapper ────────────────────────────────────────────── */
+.hub {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.hub-header {
+    background: var(--l-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15vw;
+    animation: hubFadeDown 0.7s var(--ease-out) both;
+    flex-shrink: 0;
+}
+
+.hub-logo {
+    width: min(360px, 82vw);
+    height: auto;
+    opacity: 0.88;
+    transition: opacity 0.25s ease;
+}
+.hub-logo:hover { opacity: 1; }
+
+.hub-tagline-top {
+    font-family: var(--body);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(248, 250, 252, 0.35);
+}
+
+/* ─── Pregunta ───────────────────────────────────────────── */
+.hub-question {
+    background: var(--l-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.75rem 15vw 1.25rem;
+    flex-shrink: 0;
+    animation: hubFadeDown 0.7s var(--ease-out) 0.1s both;
+}
+
+.hub-question::before,
+.hub-question::after {
+    content: '';
+    flex: 1;
+    max-width: 160px;
+    height: 1px;
+}
+.hub-question::before {
+    background: linear-gradient(90deg, transparent, rgba(12, 40, 48, 0.15));
+}
+.hub-question::after {
+    background: linear-gradient(270deg, transparent, rgba(12, 40, 48, 0.15));
+}
+
+.hub-question span {
+    font-family: var(--display);
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--l-muted);
+    white-space: nowrap;
+}
+
+/* ─── Split — contenedor de tarjetas ────────────────────── */
+.hub-split {
+    flex: 1;
+    display: flex;
+    padding: 0 15vw 3rem;
+    gap: 1.5rem;
+    align-items: stretch;
+    min-height: 0;
+}
+
+/* ─── Paneles — tarjetas ─────────────────────────────────── */
+.hub-panel {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    border-radius: 16px;
+    border: 1px solid rgba(12, 40, 48, 0.14);
+    box-shadow:
+        0 2px 20px rgba(12, 40, 48, 0.07);
+    transition:
+        border-color 0.28s var(--ease-std),
+        box-shadow   0.3s  var(--ease-std),
+        transform    0.25s var(--ease-out);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hub-panel:hover {
+    border-color: rgba(196, 151, 106, 0.5);
+    box-shadow:
+        0 8px 40px rgba(12, 40, 48, 0.12),
+        0 0 0 1px rgba(196, 151, 106, 0.2);
+    transform: translateY(-3px);
+}
+
+.hub-panel:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 2px;
+}
+
+/* ─── Panel izquierdo: Marcas ────────────────────────────── */
+/*
+   Gradiente que NACE del color del header (--anchor) en la parte
+   superior y fluye hacia un azul-petróleo más rico hacia abajo.
+   Los overlays de esmeralda añaden el acento de marca sin romper la flow.
+*/
+/* ─── Panel izquierdo: Marcas ────────────────────────────── */
+.hub-panel--marcas {
+    background: var(--l-bg);
+}
+
+/* ─── Panel derecho: Comercios ───────────────────────────── */
+.hub-panel--comercios {
+    background: var(--l-bg);
+}
+
+
+/* ─── Ilustración ────────────────────────────────────────── */
+.panel-illustration-wrap {
+    width: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(12, 40, 48, 0.07);
+    background: var(--l-bg);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1.5rem 1.5rem 0;
+    min-height: 200px;
+}
+
+.panel-illustration {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    display: block;
+    mix-blend-mode: normal;
+    object-fit: contain;
+    object-position: bottom center;
+}
+
+/* ─── Contenido dentro de cada panel ─────────────────────── */
+.panel-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+.hub-panel--marcas .panel-content {
+    animation: hubFadeLeft 0.75s var(--ease-out) 0.25s both;
+}
+
+.hub-panel--comercios .panel-content {
+    animation: hubFadeRight 0.75s var(--ease-out) 0.35s both;
+}
+
+/* ─── Eyebrow ────────────────────────────────────────────── */
+.panel-eyebrow {
+    display: inline-block;
+    font-family: var(--body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.38rem 0.8rem;
+    border-radius: 4px;
+    line-height: 1;
+}
+
+.hub-panel--marcas .panel-eyebrow {
+    color: #0C2830;
+    background: rgba(12, 40, 48, 0.08);
+    border: 1px solid rgba(12, 40, 48, 0.2);
+}
+
+
+.hub-panel--comercios .panel-eyebrow {
+    color: var(--d-accent);
+    background: rgba(196, 151, 106, 0.12);
+    border: 1px solid rgba(196, 151, 106, 0.28);
+}
+
+/* ─── Título ─────────────────────────────────────────────── */
+.panel-title {
+    font-family: var(--display);
+    font-size: clamp(1.75rem, 2.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.022em;
+}
+
+.hub-panel--marcas   .panel-title { color: var(--l-text); }
+.hub-panel--comercios .panel-title { color: var(--l-text); }
+
+.panel-title em { font-style: italic; font-weight: 400; }
+.hub-panel--marcas   .panel-title em { color: #0C2830; }
+.hub-panel--comercios .panel-title em { color: var(--d-accent); }
+
+/* ─── Separador ──────────────────────────────────────────── */
+.panel-divider {
+    width: 40px;
+    height: 1px;
+}
+
+.hub-panel--marcas   .panel-divider { background: rgba(12, 40, 48, 0.3); }
+.hub-panel--comercios .panel-divider { background: rgba(196, 151, 106, 0.4); }
+
+/* ─── Descripción ────────────────────────────────────────── */
+.panel-desc {
+    font-size: 0.9375rem;
+    line-height: 1.72;
+}
+
+.panel-subtitle {
+    font-family: var(--body);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(12, 40, 48, 0.45);
+    margin-top: -0.5rem;
+}
+
+.hub-panel--marcas   .panel-desc { color: var(--l-muted); }
+.hub-panel--comercios .panel-desc { color: var(--l-muted); }
+
+/* ─── Ícono decorativo de fondo ──────────────────────────── */
+.panel-icon-bg {
+    position: absolute;
+    bottom: -8%;
+    right: -5%;
+    width: 58%;
+    max-width: 240px;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.12;
+    color: var(--d-accent);
+}
+
+/* ─── Grilla de micro-servicios ──────────────────────────── */
+.panel-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem 1.25rem;
+    width: 100%;
+}
+
+.panel-service-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.hub-panel--marcas   .panel-service-item { color: var(--l-muted); }
+.hub-panel--comercios .panel-service-item { color: var(--l-muted); }
+
+.panel-service-item svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    opacity: 0.75;
+}
+
+.hub-panel--marcas   .panel-service-item svg { stroke: #0C2830; }
+.hub-panel--comercios .panel-service-item svg { stroke: var(--d-accent); }
+
+/* ─── CTA ────────────────────────────────────────────────── */
+.panel-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background   0.28s var(--ease-std),
+        border-color 0.28s var(--ease-std),
+        color        0.28s var(--ease-std),
+        box-shadow   0.28s var(--ease-std),
+        transform    0.2s  var(--ease-out);
+}
+
+.hub-panel--marcas .panel-cta {
+    background: rgba(12, 40, 48, 0.08);
+    border-color: rgba(12, 40, 48, 0.25);
+    color: #0C2830;
+}
+.hub-panel--comercios .panel-cta {
+    background: rgba(196, 151, 106, 0.1);
+    border-color: rgba(196, 151, 106, 0.32);
+    color: var(--d-accent);
+}
+.hub-panel--marcas:hover .panel-cta {
+    background: #0C2830;
+    border-color: #0C2830;
+    color: #EDE9E3;
+    box-shadow: 0 0 32px rgba(12, 40, 48, 0.3);
+}
+.hub-panel--comercios:hover .panel-cta {
+    background: var(--d-accent);
+    border-color: var(--d-accent);
+    color: var(--d-bg);
+    box-shadow: 0 0 32px rgba(196, 151, 106, 0.45);
+    transform: translateY(-2px);
+}
+
+.panel-cta svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.3s var(--ease-out);
+}
+.hub-panel--marcas:hover .panel-cta svg,
+.hub-panel--comercios:hover .panel-cta svg {
+    transform: translateX(4px);
+}
+
+/* ─── Divisor central — oculto en layout de tarjetas ─────── */
+.hub-divider {
+    display: none;
+}
+
+.divider-line-top {
+    flex: 1;
+    width: 1px;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(148, 163, 184, 0.2) 40%,
+        rgba(148, 163, 184, 0.3) 100%
+    );
+}
+
+.divider-line-bottom {
+    flex: 1;
+    width: 1px;
+    background: linear-gradient(180deg,
+        rgba(148, 163, 184, 0.3) 0%,
+        rgba(148, 163, 184, 0.2) 60%,
+        transparent 100%
+    );
+}
+
+.divider-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--l-bg);
+    border: 1px solid var(--l-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 12px rgba(26, 19, 9, 0.1), 0 0 0 4px var(--l-bg);
+    padding: 13px;
+}
+
+.divider-badge img {
+    width: 100%;
+    height: auto;
+    opacity: 0.55;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.hub-footer {
+    background: var(--anchor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.06);
+    flex-shrink: 0;
+}
+
+.hub-footer p {
+    font-family: var(--body);
+    font-size: 0.8rem;
+    color: rgba(248, 250, 252, 0.28);
+}
+
+.hub-footer a {
+    color: rgba(248, 250, 252, 0.4);
+    transition: color 0.2s ease;
+}
+.hub-footer a:hover { color: var(--d-accent); }
+
+/* ─── Animaciones de entrada ─────────────────────────────── */
+@keyframes hubFadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hubFadeLeft {
+    from { opacity: 0; transform: translateX(-16px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes hubFadeRight {
+    from { opacity: 0; transform: translateX(16px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+
+/* Tablet: reducir padding exterior e interior */
+@media (max-width: 900px) {
+    .hub-split    { padding: 0 2rem 2rem; gap: 1rem; }
+    .hub-header   { padding: 2rem 2rem; }
+    .hub-question { padding: 0.75rem 2rem 1.25rem; }
+    .hub-panel    { padding: 0; }
+    .panel-title { font-size: 1.75rem; }
+    .panel-desc  { font-size: 0.875rem; }
+    .panel-content { max-width: 300px; }
+}
+
+/* Mobile: apilar verticalmente */
+@media (max-width: 640px) {
+    .hub-split {
+        flex-direction: column;
+        padding: 0 1.25rem 1.75rem;
+        gap: 1rem;
+    }
+    .hub-header   { padding: 1.5rem 1.25rem; }
+    .hub-question { padding: 0.5rem 1.25rem 1rem; }
+
+    .hub-panel {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: 0;
+        padding: 2.75rem 1.75rem;
+    }
+
+    .panel-content {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .panel-pills { justify-content: center; }
+
+    .hub-logo { width: min(480px, 88vw); }
+    .hub-question span { font-size: 0.875rem; }
+}
+
+@media (max-width: 400px) {
+    .hub-header { padding: 1rem 1.25rem; }
+    .hub-split  { padding: 0 1rem 1.25rem; }
+    .hub-panel  { padding: 2rem 1.25rem; }
+    .panel-title { font-size: 1.5rem; }
+}
+
+/* ─── Motion reducido ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .hub-panel,
+    .panel-cta,
+    .panel-cta svg { transition-duration: 0.01ms !important; }
+    .hub-header,
+    .hub-question,
+    .hub-panel--marcas .panel-content,
+    .hub-panel--comercios .panel-content {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
